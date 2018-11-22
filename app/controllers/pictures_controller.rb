@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
   def show
     date = params[:date]
     url=`https://api.nasa.gov/planetary/apod?date=#{date}&hd=false&api_key={insert key}`
-    @response = RestClient::Request.execute(:method => "get", :url =>"https://api.nasa.gov/planetary/apod?date=2018-11-15&hd=false&api_key="+ENV['API_KEY'])
+    @response = RestClient::Request.execute(:method => "get", :url =>"https://api.nasa.gov/planetary/apod?date=#{date}&hd=false&api_key="+ENV['API_KEY'])
 
 
     render json: @response
