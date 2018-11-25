@@ -1,12 +1,14 @@
 class PicturesController < ApplicationController
 
   def create
-    @picture = Picture.create(picture_params)
-    if @picture.save
-      render :json => @event
-    else
-      render :json => @event.errors
-    end
+    # @picture = Picture.create(picture_params)
+    # if @picture.save
+    #   render :json => @event
+    # else
+    #   render :json => @event.errors
+    # end
+
+
   end
 
   def show
@@ -15,6 +17,9 @@ class PicturesController < ApplicationController
 
     @response = RestClient::Request.execute(:method => "get",
       :url => "https://api.nasa.gov/planetary/apod?date=#{date}&hd=false&api_key="+ENV['API_KEY'])
+
+    @pictureObj =  JSON.parse(@response)
+    @picture = Picture.create(title: @pictureObj)
       render json: @response
   end
 

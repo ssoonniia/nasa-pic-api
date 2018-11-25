@@ -6,6 +6,10 @@ class CreatePictures < ActiveRecord::Migration[5.2]
       t.text :explanation
       t.text :image
       t.string :copyright
+      t.text :media_type
+      t.text :service_version
+      t.text :url
+      t.text :hdurl
       t.timestamps
     end
   end

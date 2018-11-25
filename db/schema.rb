@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2018_11_19_234314) do
     t.text "explanation"
     t.text "image"
     t.string "copyright"
+    t.text "media_type"
+    t.text "service_version"
+    t.text "url"
+    t.text "hdurl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
