@@ -2,7 +2,7 @@
 
     def index
        @pictures = Picture.all
-       render json: pictures
+       render json: @pictures
 
      end
 
