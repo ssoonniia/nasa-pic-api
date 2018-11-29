@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(content: params[:content])
+    debugger
+    @comment = Comment.create(content: params[:content], author: params[:author])
     @picture = Picture.find_by(date: params[:date])
     @comment.picture = @picture
 
