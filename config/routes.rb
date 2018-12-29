@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-
-  post 'pictures/:date/comments', to: 'comments#create'
+  root 'pictures#show'
   get'pictures/:date', to: 'pictures#show'
   get 'pictures', to: 'pictures#index'
+  post 'pictures/:date/comments', to: 'comments#create'
 
-  root 'pictures#show'
 end
-
-
-# resources :mars
