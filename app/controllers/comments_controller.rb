@@ -13,9 +13,6 @@ class CommentsController < ApplicationController
     else
       render json: {message: @comment.errors}, status:400
     end
-
   end
-
-
 
 end
